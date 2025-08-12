@@ -9,7 +9,7 @@
 </head>
 <body>
   <button class="back-btn" onclick="location.href='../duets.html'">&#8592; Back</button>
-  <h1>Play 2</h1>
+  <h1>Counting Duet 2</h1>
 
   <!-- Restart All Tracks Button -->
   <button class="timeline" id="restart" onclick="restartTracks()">⏮︎</button>
@@ -35,7 +35,7 @@
 
   <div id="master-track">
     <audio id="master-audio">
-      <source id="master-source" src="Tracks/With Metronome/Combinations/Play 2 Mix All with met.mp3" type="audio/mp3">
+      <source id="master-source" src="Tracks/With Metronome/Combinations/Audio 6 Duet 5 Counting Duet 2 Mix with Met.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -64,18 +64,18 @@
     <div class="track-slider">
       <label for="timeline">Timeline:</label>
       <div>
-        <input type="range" id="timeline" min="0" max="53" value="0" style="width: 50%;" oninput="moveTracksSlider(this.value)">
+        <input type="range" id="timeline" min="0" max="76" value="0" style="width: 50%;" oninput="moveTracksSlider(this.value)">
       </div>
     </div>
 
     <div id="loop-controls" hidden>
       <label for="loop-start">Loop Start:</label>
       <div>
-        <input type="range" id="loop-start" value="0" min="0" max="53" style="width: 50%;"/>
+        <input type="range" id="loop-start" value="0" min="0" max="76" style="width: 50%;"/>
       </div> 
       <label for="loop-end">Loop End:</label>
       <div>
-        <input type="range" id="loop-end" value="0" min="0" max="53" style="width: 50%;"/>
+        <input type="range" id="loop-end" value="0" min="0" max="76" style="width: 50%;"/>
       </div>
     </div>
   
@@ -84,9 +84,7 @@
 
       <div>
         <label for="speed">Speed (BPM):</label>
-        <input type="range" id="speed" value="100" min="50" max="200" oninput="changeSpeed(this.value)">
-        <!-- Reset Speed Button -->
-        <button id="reset-speed" onclick="resetSpeed()">Default Speed</button>
+        <input type="range" id="speed" value="100" min="50" max="100" oninput="changeSpeed(this.value)">
      </div>
   </div>
 
