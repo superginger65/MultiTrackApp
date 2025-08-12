@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audio Track Player</title>
+  <title>MultiTrackApp</title>
   <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-  <h1>Multi-Track Audio Player</h1>
+  <button class="back-btn" onclick="location.href='../trios.html'">&#8592; Back</button>
+  <h1>Trio 1 Andante</h1>
 
   <!-- Restart All Tracks Button -->
-  <button id="restart" onclick="restartTracks()">⏮︎</button>
+  <button class="timeline" id="restart" onclick="restartTracks()">⏮︎</button>
 
   <!-- Rewind 30 Seconds Button -->
-  <button id="rewind-30" onclick="moveTracks(-30)">⏪30s</button>
+  <button class="timeline" id="rewind-30" onclick="moveTracks(-30)">⏪30s</button>
 
   <!-- Rewind 10 Seconds Button -->
-  <button id="rewind-10" onclick="moveTracks(-10)">⏪10s</button>
+  <button class="timeline" id="rewind-10" onclick="moveTracks(-10)">⏪10s</button>
 
   <!-- Master Play/Pause Button -->
-  <button id="master-play-pause" onclick="toggleMasterPlayPause()">⏵︎</button>
+  <button class="timeline" id="master-play-pause" onclick="toggleMasterPlayPause()">⏵︎</button>
 
   <!-- Fast Forward 10 Seconds Button -->
-  <button id="fast-forward-10" onclick="moveTracks(10)">⏩10s</button>
+  <button class="timeline" id="fast-forward-10" onclick="moveTracks(10)">⏩10s</button>
 
   <!-- Fast Forward 30 Seconds Button -->
-  <button id="fast-forward-30" onclick="moveTracks(30)">⏩30s</button>
+  <button class="timeline" id="fast-forward-30" onclick="moveTracks(30)">⏩30s</button>
 
   <div id="Tracks">
     <!-- Tracks will be generated -->
@@ -33,40 +35,56 @@
 
   <div id="track-container">
     <div class="track">
-        <label for="track1">Guitar 1:</label>
-        <audio id="track1">
-            <source src="Tracks/Trio 1 Andante Guitar I.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <button id="mute-track1" onclick="toggleMute('track1')">🔊</button>
+      <label for="track1">Guitar 1:</label>
+      <audio id="track1">
+        <source src="Tracks/Trio 1 Andante Guitar I.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <button class="mute" id="mute-track1" onclick="toggleMute('track1')">🔊</button>
+      <input type="range" min="0" max="1" step="0.01" value="1" 
+           class="volume-slider" style="writing-mode: vertical-lr; direction: rtl; width: 30px; height: 100px;"
+           onchange="setTrackVolume('track1', this.value)" 
+           oninput="setTrackVolume('track1', this.value)">
     </div>
 
     <div class="track">
-        <label for="track2">Guitar 2:</label>
-        <audio id="track2">
-            <source src="Tracks/Trio 1 Andante Guitar II.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <button id="mute-track2" onclick="toggleMute('track2')">🔊</button>
+      <label for="track2">Guitar 2:</label>
+      <audio id="track2">
+        <source src="Tracks/Trio 1 Andante Guitar II.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <button class="mute" id="mute-track2" onclick="toggleMute('track2')">🔊</button>
+      <input type="range" min="0" max="1" step="0.01" value="1" 
+           class="volume-slider" style="writing-mode: vertical-lr; direction: rtl; width: 30px; height: 100px;"
+           onchange="setTrackVolume('track2', this.value)" 
+           oninput="setTrackVolume('track2', this.value)">
     </div>
 
     <div class="track">
       <label for="track3">Guitar 3:</label>
       <audio id="track3">
-          <source src="Tracks/Trio 1 Andante Guitar III.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
+        <source src="Tracks/Trio 1 Andante Guitar III.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
       </audio>
-      <button id="mute-track3" onclick="toggleMute('track3')">🔊</button>
-  </div>
+      <button class="mute" id="mute-track3" onclick="toggleMute('track3')">🔊</button>
+      <input type="range" min="0" max="1" step="0.01" value="1" 
+         class="volume-slider" style="writing-mode: vertical-lr; direction: rtl; width: 30px; height: 100px;"
+         onchange="setTrackVolume('track3', this.value)" 
+         oninput="setTrackVolume('track3', this.value)">
+    </div>
 
-  <div class="track">
+    <div class="track">
     <label for="track4">Metronome:</label>
     <audio id="track4">
-        <source src="Tracks/Trio 1 Andante Metronome.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
+      <source src="Tracks/Trio 1 Andante Metronome.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
     </audio>
-    <button id="mute-track4" onclick="toggleMute('track4')">🔊</button>
-</div>
+    <button class="mute" id="mute-track4" onclick="toggleMute('track4')">🔊</button>
+    <input type="range" min="0" max="1" step="0.01" value="1" 
+         class="volume-slider" style="writing-mode: vertical-lr; direction: rtl; width: 30px; height: 100px;"
+         onchange="setTrackVolume('track4', this.value)" 
+         oninput="setTrackVolume('track4', this.value)">
+  </div>
 
     <div class="track-slider">
       <label for="timeline">Timeline:</label>

@@ -72,6 +72,22 @@ button.mute:hover {
   background: #d32f2f;
 }
 
+.back-btn {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  padding: 0.4em 1.2em;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+.back-btn:hover {
+    background: #222;
+}
+
 @media (max-width: 700px) {
   #track-container {
     flex-direction: column;
