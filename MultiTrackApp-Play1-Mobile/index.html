@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MultiTrackApp</title>
+  <title>Audio Player</title>
   <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-  <button class="back-btn" onclick="location.href='../duets.html'">&#8592; Back</button>
+  <button class="back-btn" onclick="location.href='../strummingduets.html'">&#8592; Back</button>
   <h1>Play 1</h1>
 
   <!-- Restart All Tracks Button -->
@@ -84,7 +84,7 @@
 
       <div>
         <label for="speed">Speed (BPM):</label>
-        <input type="range" id="speed" value="100" min="50" max="200" oninput="changeSpeed(this.value)">
+        <input type="range" id="speed" value="100" min="50" max="100" oninput="changeSpeed(this.value)">
         <!-- Reset Speed Button -->
         <button id="reset-speed" onclick="resetSpeed()">Default Speed</button>
      </div>
