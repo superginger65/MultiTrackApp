@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <br />
+    <button class="back-btn" onclick="location.href='index.html'">&#8592; Back</button>
+    <h1>Audio Player - Book 1 Unit 4</h1>
+    <label for="teacherstudentduets-dropdown"><h3>Teacher-Student Duets</h3></label>
+    <select id="teacherstudentduets-dropdown" onchange="if(this.value) location.href=this.value + '?from=unit4';">
+    <option value="">Select a Teacher-Student Duet...</option>
+    <option value="TeacherStudentDuet11-SimpleSong1/index.html">Simple Song 1</option>
+    <option value="TeacherStudentDuet12-SimpleSong2/index.html">Simple Song 2</option>
+    <option value="TeacherStudentDuet13-SimpleSong3/index.html">Simple Song 3</option>
+    <option value="TeacherStudentDuet14-SimpleSong4/index.html">Simple Song 4</option>
+    <option value="TeacherStudentDuet15-SimpleSong5/index.html">Simple Song 5</option>
+    <option value="TeacherStudentDuet16-Breeze/index.html">Breeze</option>
+    </select>
+    <br /><br />
+    <label for="ensembles-dropdown"><h3>Ensembles</h3></label>
+    <select id="ensembles-dropdown" onchange="if(this.value) location.href=this.value + '?from=unit4';">
+        <option value="">Select an Ensemble...</option>
+        <option value="Ensemble2-Moderato/index.html">Moderato</option>
+    </select>
+    <br /><br />
+    <label for="strummingduets-dropdown"><h3>Strumming Duets</h3></label>
+    <select id="strummingduets-dropdown" onchange="if(this.value) location.href=this.value + '?from=unit4';">
+        <option value="">Select a Strumming Duet...</option>
+        <option value="StrummingDuet2-Shenandoah/index.html">Shenandoah</option>
+    </select>
+
+</body>
+</html>
+

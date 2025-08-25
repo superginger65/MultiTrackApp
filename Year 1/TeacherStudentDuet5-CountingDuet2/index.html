@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <button class="back-btn" onclick="goBack()">&#8592; Back</button>
+  <h1>Counting Duet 2</h1>
+
+  <!-- Restart All Tracks Button -->
+  <button class="timeline" id="restart" onclick="restartTracks()">⏮︎</button>
+
+  <!-- Rewind 30 Seconds Button -->
+  <button class="timeline" id="rewind-30" onclick="moveTracks(-30)">⏪30s</button>
+
+  <!-- Rewind 10 Seconds Button -->
+  <button class="timeline" id="rewind-10" onclick="moveTracks(-10)">⏪10s</button>
+
+  <!-- Master Play/Pause Button -->
+  <button class="timeline" id="master-play-pause" onclick="toggleMasterPlayPause()">⏵︎</button>
+
+  <!-- Fast Forward 10 Seconds Button -->
+  <button class="timeline" id="fast-forward-10" onclick="moveTracks(10)">⏩10s</button>
+
+  <!-- Fast Forward 30 Seconds Button -->
+  <button class="timeline" id="fast-forward-30" onclick="moveTracks(30)">⏩30s</button>
+
+  <div id="Tracks">
+    <!-- Tracks will be generated -->
+  </div>
+
+  <div id="master-track">
+    <audio id="master-audio">
+      <source id="master-source" src="Tracks/With Metronome/Combinations/Audio 6 Duet 5 Counting Duet 2 Mix with Met.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div id="track-container">
+    <div class="track">
+      <label for="track1">Student:</label>
+      <button class="mute" id="mute-track1" onclick="toggleTrack(1, true)">🔊</button>
+    </div>
+
+    <div class="track">
+      <label for="track2">Teacher:</label>
+      <button class="mute" id="mute-track2" onclick="toggleTrack(2, true)">🔊</button>
+    </div>
+
+    <div class="track">
+      <label for="track3">Strum:</label>
+      <button class="mute" id="mute-track3" onclick="toggleTrack(3, true)">🔊</button>
+    </div>
+
+    <div class="track">
+    <label for="track4">Metronome:</label>
+    <button class="mute" id="mute-track4" onclick="toggleTrack(4, true)">🔊</button>
+  </div>
+
+    <div class="track-slider">
+      <label for="timeline">Timeline:</label>
+      <div>
+        <input type="range" id="timeline" min="0" max="76" value="0" style="width: 50%;" oninput="moveTracksSlider(this.value)">
+      </div>
+    </div>
+
+    <div id="loop-controls" hidden>
+      <label for="loop-start">Loop Start:</label>
+      <div>
+        <input type="range" id="loop-start" value="0" min="0" max="76" style="width: 50%;"/>
+      </div> 
+      <label for="loop-end">Loop End:</label>
+      <div>
+        <input type="range" id="loop-end" value="0" min="0" max="76" style="width: 50%;"/>
+      </div>
+    </div>
+  
+    <!-- Toggle Loop Button -->
+      <button id="toggle-loop" onclick="toggleLoop()">🔁</button>
+
+      <div>
+        <label for="speed">Speed (BPM):</label>
+        <input type="range" id="speed" value="100" min="50" max="100" oninput="changeSpeed(this.value)">
+     </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

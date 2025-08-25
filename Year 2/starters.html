@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <br />
+    <button class="back-btn" onclick="location.href='index.html'">&#8592; Back</button>
+    <h1>Audio Player - Book 2 Starters</h1>
+    <label for="duets-dropdown"><h3>Teacher-Student Duets</h3></label>
+    <select id="duets-dropdown" onchange="if(this.value) location.href=this.value + '?from=starters';">
+    <option value="">Select a Duet...</option>
+    <option value="TeacherStudentDuet1-CoolBreeze/index.html">Cool Breeze</option>
+    <option value="TeacherStudentDuet2-RagBlues/index.html">Rag Blues</option>
+    </select>
+
+</body>
+</html>
+
