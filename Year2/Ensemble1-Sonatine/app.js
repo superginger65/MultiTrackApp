@@ -33,6 +33,12 @@ let track4Mute = false;
     track4Mute = !track4Mute;
     const muteButton4 = document.getElementById(`mute-track4`);
     muteButton4.textContent = track4Mute ? '🔇' : '🔊';
+    if (track4Mute) {
+      muteButton4.classList.add('mute');
+    }
+    else {
+      muteButton4.classList.remove('mute');
+    }
     
     if (!track4Mute) {
       trackToPlay = `Tracks/Audio 5 Ens 1 Sonatine mix with Met.mp3`; 
