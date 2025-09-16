@@ -2,6 +2,12 @@
 let masterTrack = document.getElementById('master-audio');
 const timeline = document.getElementById('timeline');
 
+let trackToPlay = `Tracks/With Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Mix with met.mp3`;
+let track1Mute = false;
+let track2Mute = false;
+let track3Mute = false;
+let track4Mute = false;
+
   masterTrack.addEventListener('ended', endTracks);
   masterTrack.addEventListener('timeupdate', function() {
     timeline.value = this.currentTime;
@@ -17,6 +23,110 @@ const timeline = document.getElementById('timeline');
       }
     }
   
+  // Function to toggle mute on a track
+  function toggleMute(trackId) {
+    const track = document.getElementById(trackId);
+    track.muted = !track.muted;
+
+    const muteButton = document.getElementById(`mute-${trackId}`);
+    muteButton.textContent = track.muted ? '🔇' : '🔊';
+  }
+
+  function toggleTrack(trackId, shouldPlay) {
+
+    switch (trackId) {
+      case 1:
+        track1Mute = !track1Mute;
+        const muteButton1 = document.getElementById(`mute-track1`);
+        muteButton1.textContent = track1Mute ? '🔇' : '🔊';
+        if (track1Mute) {
+          muteButton1.classList.add('mute');
+        }
+        else {
+          muteButton1.classList.remove('mute');
+        }
+        break;
+      case 2:
+        track2Mute = !track2Mute;
+        const muteButton2 = document.getElementById(`mute-track2`);
+        muteButton2.textContent = track2Mute ? '🔇' : '🔊';
+        if (track2Mute) {
+          muteButton2.classList.add('mute');
+        }
+        else {
+          muteButton2.classList.remove('mute');
+        }
+        break;
+      case 3:
+        track3Mute = !track3Mute;
+        const muteButton3 = document.getElementById(`mute-track3`);
+        muteButton3.textContent = track3Mute ? '🔇' : '🔊';
+        if (track3Mute) {
+          muteButton3.classList.add('mute');
+        }
+        else {
+          muteButton3.classList.remove('mute');
+        }
+        break;
+      case 4:
+        track4Mute = !track4Mute;
+        const muteButton4 = document.getElementById(`mute-track4`);
+        muteButton4.textContent = track4Mute ? '🔇' : '🔊';
+        if (track4Mute) {
+          muteButton4.classList.add('mute');
+        }
+        else {
+          muteButton4.classList.remove('mute');
+        }
+        break;
+    }
+    if (!track1Mute && !track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Mix with met.mp3`; 
+    } else if (track1Mute && !track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Voc Teach with met.mp3`;
+    } else if (!track1Mute && track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Voc Stud with met.mp3`;
+    } else if (!track1Mute && !track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Teach Stud with met.mp3`;
+    } else if (!track1Mute && !track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Mix no met.mp3`;
+    } else if (track1Mute && track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 19 Strumm Duet 1 Shenandoah Vocal with met.mp3`;
+    } else if (!track1Mute && track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 19 Strumm Duet 1 Shenandoah Stud with met.mp3`;
+    } else if (!track1Mute && !track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Teach Stud no met.mp3`;
+    } else if (track1Mute && !track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 19 Strumm Duet 1 Shenandoah Teach with met.mp3`;
+    } else if (track1Mute && !track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Vocal Teach no met.mp3`;
+    } else if (!track1Mute && track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 19 Strumm Duet 1 Shenandoah Vocal Stud no met.mp3`;
+    } else if (track1Mute && track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 19 Strumm Duet 1 Shenandoah Met with met.mp3`;
+    } else if (track1Mute && track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 19 Strumm Duet 1 Shenandoah Vocal no met.mp3`;
+    } else if (track1Mute && !track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 19 Strumm Duet 1 Shenandoah Teach no met.mp3`;
+    } else if (!track1Mute && track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 19 Strumm Duet 1 Shenandoah Stud no met.mp3`;
+    } else if (track1Mute && track2Mute && track3Mute && track4Mute) {
+      toggleTrack(trackId, false);
+      return;
+    }
+    if (shouldPlay) {
+      let track = document.getElementById(`master-audio`);
+      let source = document.getElementById(`master-source`);
+      let wasPlaying = !track.paused;
+      track.pause();
+      let currentTime = track.currentTime;
+      source.src = trackToPlay;
+      track.load();
+      track.currentTime = currentTime;
+      if (wasPlaying) track.play();
+    }
+  }
+
   // Function to change the playback speed based on the input BPM
   function changeSpeed(bpm) {
     const masterTrack = document.getElementById('master-audio');
@@ -44,6 +154,11 @@ const timeline = document.getElementById('timeline');
     }
   }
 
+  function setTrackVolume(trackId, volume) {
+    const track = document.getElementById(trackId);
+    track.volume = volume;
+  }
+
 
   function endTracks() {
     const masterTrack = document.getElementById('master-audio');
@@ -59,6 +174,7 @@ const timeline = document.getElementById('timeline');
     const masterTrack = document.getElementById('master-audio');
     masterTrack.currentTime = 0;
   }
+
 
   //Function to handle moving the Time of the Tracks
   function moveTracks(timeInSeconds) {

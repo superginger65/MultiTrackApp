@@ -2,7 +2,10 @@
 let masterTrack = document.getElementById('master-audio');
 const timeline = document.getElementById('timeline');
 
-let trackToPlay = `Tracks/Audio 14 Duet 12 Simple Song 2 Mix with Met.mp3`;
+let trackToPlay = `Tracks/With Metronome/Combinations/Audio 14  Duet 12 Simple Song 2 Mix with  Met.mp3`;
+let track1Mute = false;
+let track2Mute = false;
+let track3Mute = false;
 let track4Mute = false;
 
   masterTrack.addEventListener('ended', endTracks);
@@ -30,20 +33,86 @@ let track4Mute = false;
   }
 
   function toggleTrack(trackId, shouldPlay) {
-    track4Mute = !track4Mute;
-    const muteButton4 = document.getElementById(`mute-track4`);
-    muteButton4.textContent = track4Mute ? '🔇' : '🔊';
-    if (track4Mute) {
-      muteButton4.classList.add('mute');
-    }
-    else {
-      muteButton4.classList.remove('mute');
-    }
 
-    if (!track4Mute) {
-      trackToPlay = `Tracks/Audio 14 Duet 12 Simple Song 2 Mix with Met.mp3`; 
-    } else {
-      trackToPlay = `Tracks/Audio 14 Duet 12 Simple Song 2 Mix no Met.mp3`;
+    switch (trackId) {
+      case 1:
+        track1Mute = !track1Mute;
+        const muteButton1 = document.getElementById(`mute-track1`);
+        muteButton1.textContent = track1Mute ? '🔇' : '🔊';
+        if (track1Mute) {
+          muteButton1.classList.add('mute');
+        }
+        else {
+          muteButton1.classList.remove('mute');
+        }
+        break;
+      case 2:
+        track2Mute = !track2Mute;
+        const muteButton2 = document.getElementById(`mute-track2`);
+        muteButton2.textContent = track2Mute ? '🔇' : '🔊';
+        if (track2Mute) {
+          muteButton2.classList.add('mute');
+        }
+        else {
+          muteButton2.classList.remove('mute');
+        }
+        break;
+      case 3:
+        track3Mute = !track3Mute;
+        const muteButton3 = document.getElementById(`mute-track3`);
+        muteButton3.textContent = track3Mute ? '🔇' : '🔊';
+        if (track3Mute) {
+          muteButton3.classList.add('mute');
+        }
+        else {
+          muteButton3.classList.remove('mute');
+        }
+        break;
+      case 4:
+        track4Mute = !track4Mute;
+        const muteButton4 = document.getElementById(`mute-track4`);
+        muteButton4.textContent = track4Mute ? '🔇' : '🔊';
+        if (track4Mute) {
+          muteButton4.classList.add('mute');
+        }
+        else {
+          muteButton4.classList.remove('mute');
+        }
+        break;
+    }
+    if (!track1Mute && !track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 14  Duet 12 Simple Song 2 Mix with  Met.mp3`; 
+    } else if (track1Mute && !track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 14 Duet 12 Simple Song II Teach Strum with Met.mp3`;
+    } else if (!track1Mute && track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 14 Duet 12 Simple Song II Stud Strum with Met.mp3`;
+    } else if (!track1Mute && !track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 14 Duet 12 Simple Song II Stud Teach with Met.mp3`;
+    } else if (!track1Mute && !track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 14  Duet 12 Simple Song 2 Mix no Met.mp3`;
+    } else if (track1Mute && track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 14 Duet 12 Simple Song II Strum with Met.mp3`;
+    } else if (!track1Mute && track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 14 Duet 12 Simple Song II Stud with Met.mp3`;
+    } else if (!track1Mute && !track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 14 Duet 12 Simple Song II Stud Teach no Met.mp3`;
+    } else if (track1Mute && !track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 14 Duet 12 Simple Song II Teach with Met.mp3`;
+    } else if (track1Mute && !track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 14 Duet 12 Simple Song II Teach Strum no Met.mp3`;
+    } else if (!track1Mute && track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 14 Duet 12 Simple Song II Stud Strum no Met.mp3`;
+    } else if (track1Mute && track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 14 Duet 12 Simple Song II Met with Met.mp3`;
+    } else if (track1Mute && track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 14 Duet 12 Simple Song II Strum no Met.mp3`;
+    } else if (track1Mute && !track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 14 Duet 12 Simple Song II Teach no Met.mp3`;
+    } else if (!track1Mute && track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 14 Duet 12 Simple Song II Stud no Met.mp3`;
+    } else if (track1Mute && track2Mute && track3Mute && track4Mute) {
+      toggleTrack(trackId, false);
+      return;
     }
     if (shouldPlay) {
       let track = document.getElementById(`master-audio`);
