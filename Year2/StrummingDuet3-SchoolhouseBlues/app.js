@@ -2,7 +2,10 @@
 let masterTrack = document.getElementById('master-audio');
 const timeline = document.getElementById('timeline');
 
-let trackToPlay = `Tracks/Audio 10 Strum Duet 3 Schoolhouse Blues with met.mp3`;
+let trackToPlay = `Tracks/With Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse mix with Met.mp3`;
+let track1Mute = false;
+let track2Mute = false;
+let track3Mute = false;
 let track4Mute = false;
 
   masterTrack.addEventListener('ended', endTracks);
@@ -30,21 +33,86 @@ let track4Mute = false;
   }
 
   function toggleTrack(trackId, shouldPlay) {
-    track4Mute = !track4Mute;
-    const muteButton4 = document.getElementById(`mute-track4`);
-    muteButton4.textContent = track4Mute ? '🔇' : '🔊';
 
-    if (track4Mute) {
-      muteButton4.classList.add('mute');
+    switch (trackId) {
+      case 1:
+        track1Mute = !track1Mute;
+        const muteButton1 = document.getElementById(`mute-track1`);
+        muteButton1.textContent = track1Mute ? '🔇' : '🔊';
+        if (track1Mute) {
+          muteButton1.classList.add('mute');
+        }
+        else {
+          muteButton1.classList.remove('mute');
+        }
+        break;
+      case 2:
+        track2Mute = !track2Mute;
+        const muteButton2 = document.getElementById(`mute-track2`);
+        muteButton2.textContent = track2Mute ? '🔇' : '🔊';
+        if (track2Mute) {
+          muteButton2.classList.add('mute');
+        }
+        else {
+          muteButton2.classList.remove('mute');
+        }
+        break;
+      case 3:
+        track3Mute = !track3Mute;
+        const muteButton3 = document.getElementById(`mute-track3`);
+        muteButton3.textContent = track3Mute ? '🔇' : '🔊';
+        if (track3Mute) {
+          muteButton3.classList.add('mute');
+        }
+        else {
+          muteButton3.classList.remove('mute');
+        }
+        break;
+      case 4:
+        track4Mute = !track4Mute;
+        const muteButton4 = document.getElementById(`mute-track4`);
+        muteButton4.textContent = track4Mute ? '🔇' : '🔊';
+        if (track4Mute) {
+          muteButton4.classList.add('mute');
+        }
+        else {
+          muteButton4.classList.remove('mute');
+        }
+        break;
     }
-    else {
-      muteButton4.classList.remove('mute');
-    }
-
-    if (!track4Mute) {
-      trackToPlay = `Tracks/Audio 10 Strum Duet 3 Schoolhouse Blues with met.mp3`; 
-    } else {
-      trackToPlay = `Tracks/Audio 10 Strum Duet 3 Schoolhouse Blues no met.mp3`;
+    if (!track1Mute && !track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse mix with Met.mp3`; 
+    } else if (track1Mute && !track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse Voc and Gtr with Met.mp3`;
+    } else if (!track1Mute && track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse Voc and Gtr Solo with Met.mp3`;
+    } else if (!track1Mute && !track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse Gtr solo and Gtr with Met.mp3`;
+    } else if (!track1Mute && !track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse Blues no met.mp3`;
+    } else if (track1Mute && track2Mute && !track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 10 Strum Duet 3 Schoolhouse Blues Vocal with Met.mp3`;
+    } else if (!track1Mute && track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 10 Strum Duet 3 Schoolhouse Blues Gtr Solo with Met.mp3`;
+    } else if (!track1Mute && !track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse Blues Guit solo and guit no met.mp3`;
+    } else if (track1Mute && !track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 10 Strum Duet 3 Schoolhouse Blues Gtr with Met.mp3`;
+    } else if (track1Mute && !track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse Blues voc and guit no met.mp3`;
+    } else if (!track1Mute && track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 10 Strum Duet 3 Schoolhouse Blues voc and guit solo no met.mp3`;
+    } else if (track1Mute && track2Mute && track3Mute && !track4Mute) {
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 10 Strum Duet 3 Schoolhouse Blues met with Met.mp3`;
+    } else if (track1Mute && track2Mute && !track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 10 Strum Duet 3 Schoolhouse Blues Voc no met.mp3`;
+    } else if (track1Mute && !track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 10 Strum Duet 3 Schoolhouse Blues GTR  no met.mp3`;
+    } else if (!track1Mute && track2Mute && track3Mute && track4Mute) {
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 10 Strum Duet 3 Schoolhouse Blues GTR Solo no met.mp3`;
+    } else if (track1Mute && track2Mute && track3Mute && track4Mute) {
+      toggleTrack(trackId, false);
+      return;
     }
     if (shouldPlay) {
       let track = document.getElementById(`master-audio`);

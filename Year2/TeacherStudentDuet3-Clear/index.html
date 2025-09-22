@@ -35,12 +35,27 @@
 
   <div id="master-track">
     <audio id="master-audio">
-      <source id="master-source" src="Tracks/Audio 4 Duet 3 Clear Mix with met.mp3" type="audio/mp3">
+      <source id="master-source" src="Tracks/With Metronome/Combinations/Audio 4 Duet 3 Clear Mix with met.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
   </div>
 
   <div id="track-container">
+    <div class="track">
+      <label for="track1">Guitar 1:</label>
+      <button id="mute-track1" onclick="toggleTrack(1, true)">🔊</button>
+    </div>
+
+    <div class="track">
+      <label for="track2">Guitar 2:</label>
+      <button id="mute-track2" onclick="toggleTrack(2, true)">🔊</button>
+    </div>
+
+    <div class="track">
+      <label for="track3">Strum:</label>
+      <button id="mute-track3" onclick="toggleTrack(3, true)">🔊</button>
+    </div>
+
     <div class="track">
     <label for="track4">Metronome:</label>
     <button id="mute-track4" onclick="toggleTrack(4, true)">🔊</button>
