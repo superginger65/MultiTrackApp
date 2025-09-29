@@ -9,7 +9,7 @@
 </head>
 <body>
   <button class="back-btn" onclick="goBack()">&#8592; Back</button>
-  <h1>Accidental Blues</h1>
+  <h1>Twilight</h1>
 
   <!-- Restart All Tracks Button -->
   <button class="timeline" id="restart" onclick="restartTracks()">⏮︎</button>
@@ -35,7 +35,7 @@
 
   <div id="master-track">
     <audio id="master-audio">
-      <source id="master-source" src="Tracks/With Metronome/Combinations/Trio 1 Andante Mix with Met.mp3" type="audio/mp3">
+      <source id="master-source" src="Tracks/With Metronome/Combinations/Audio 26 Ensemble 6 Twilight mix with met.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -64,18 +64,18 @@
     <div class="track-slider">
       <label for="timeline">Timeline:</label>
       <div>
-        <input type="range" id="timeline" min="0" max="76" value="0" style="width: 50%;" oninput="moveTracksSlider(this.value)">
+        <input type="range" id="timeline" min="0" max="130" value="0" style="width: 50%;" oninput="moveTracksSlider(this.value)">
       </div>
     </div>
 
     <div id="loop-controls" hidden>
       <label for="loop-start">Loop Start:</label>
       <div>
-        <input type="range" id="loop-start" value="0" min="0" max="76" style="width: 50%;"/>
+        <input type="range" id="loop-start" value="0" min="0" max="130" style="width: 50%;"/>
       </div> 
       <label for="loop-end">Loop End:</label>
       <div>
-        <input type="range" id="loop-end" value="0" min="0" max="76" style="width: 50%;"/>
+        <input type="range" id="loop-end" value="0" min="0" max="130" style="width: 50%;"/>
       </div>
     </div>
   
