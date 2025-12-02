@@ -2,11 +2,12 @@
 let masterTrack = document.getElementById('master-audio');
 const timeline = document.getElementById('timeline');
 
-let trackToPlay = `Tracks/With Metronome/Combinations/Trio 1 Andante Mix with Met.mp3`;
+let trackToPlay = `Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues mix with Met.mp3`;
 let track1Mute = false;
 let track2Mute = false;
 let track3Mute = false;
 let track4Mute = false;
+let track5Mute = false;
 
   masterTrack.addEventListener('ended', endTracks);
   masterTrack.addEventListener('timeupdate', function() {
@@ -79,38 +80,81 @@ let track4Mute = false;
           muteButton4.classList.remove('mute');
         }
         break;
+      case 5:
+        track5Mute = !track5Mute;
+        const muteButton5 = document.getElementById(`mute-track5`);
+        muteButton5.textContent = track5Mute ? '🔇' : '🔊';
+        if (track5Mute) {
+          muteButton5.classList.add('mute');
+        }
+        else {
+          muteButton5.classList.remove('mute');
+        }
+        break;
     }
-    if (!track1Mute && !track2Mute && !track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Combinations/Trio 1 Andante Mix with Met.mp3`; 
-    } else if (track1Mute && !track2Mute && !track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Combinations/Trio 1 Andante 2+3 with Met.mp3`;
-    } else if (!track1Mute && track2Mute && !track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Combinations/Trio 1 Andante 1+3 with Met.mp3`;
-    } else if (!track1Mute && !track2Mute && track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Combinations/Trio 1 Andante 1+2 with Met.mp3`;
-    } else if (!track1Mute && !track2Mute && !track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Combinations/Trio 1 Andante mix no Met.mp3`;
-    } else if (track1Mute && track2Mute && !track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Singles/Trio 1 Andante Guitar 3 with Met.mp3`;
-    } else if (!track1Mute && track2Mute && track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Singles/Trio 1 Andante Guitar 1 with Met.mp3`;
-    } else if (!track1Mute && !track2Mute && track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Combinations/Trio 1 Andante 1+2 no Met.mp3`;
-    } else if (track1Mute && !track2Mute && track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Singles/Trio 1 Andante Guitar 2 with Met.mp3`;
-    } else if (track1Mute && !track2Mute && !track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Combinations/Trio 1 Andante 2+3 no Met.mp3`;
-    } else if (!track1Mute && track2Mute && !track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Combinations/Trio 1 Andante 1+3 no Met.mp3`;
-    } else if (track1Mute && track2Mute && track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Singles/Trio 1 Andante Metronome with Met.mp3`;
-    } else if (track1Mute && track2Mute && !track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Singles/Trio 1 Andante Guitar 3 no Met.mp3`;
-    } else if (track1Mute && !track2Mute && track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Singles/Trio 1 Andante Guitar 2 no Met.mp3`;
-    } else if (!track1Mute && track2Mute && track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Singles/Trio 1 Andante Guitar 1 no Met.mp3`;
-    } else if (track1Mute && track2Mute && track3Mute && track4Mute) {
+    if (!track1Mute && !track2Mute && !track3Mute && !track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues mix with Met.mp3";
+    } else if (!track1Mute && !track2Mute && !track3Mute && !track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues mix no Met.mp3";
+    } else if (!track1Mute && !track2Mute && !track3Mute && track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr1+2+3 with Met.mp3";
+    } else if (!track1Mute && !track2Mute && track3Mute && !track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr1+2+4with Met.mp3";
+    } else if (!track1Mute && track2Mute && !track3Mute && !track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr1+3+4with Met.mp3";
+    } else if (track1Mute && !track2Mute && !track3Mute && !track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr2+3+4with Met.mp3";
+    } else if (!track1Mute && !track2Mute && track3Mute && track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 1+2 no Met.mp3";
+    } else if (!track1Mute && track2Mute && !track3Mute && track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 1+3 no Met.mp3";
+    } else if (!track1Mute && track2Mute && track3Mute && !track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 1+4 no Met.mp3";
+    } else if (!track1Mute && track2Mute && track3Mute && track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues Gtr 1 with Met.mp3";
+    } else if (track1Mute && !track2Mute && !track3Mute && track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 2+3 no Met.mp3";
+    } else if (track1Mute && !track2Mute && track3Mute && !track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 2+4 no Met.mp3";
+    } else if (track1Mute && !track2Mute && track3Mute && track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues Gtr 2 with Met.mp3";
+    } else if (track1Mute && track2Mute && !track3Mute && !track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 3+4 no Met.mp3";
+    } else if (track1Mute && track2Mute && !track3Mute && track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues Gtr 3 with Met.mp3";
+    } else if (track1Mute && track2Mute && track3Mute && !track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues Gtr 4 with Met.mp3";
+    } else if (!track1Mute && track2Mute && track3Mute && track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues Gtr 1 no Met.mp3";
+    } else if (track1Mute && !track2Mute && track3Mute && track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues Gtr 2 no Met.mp3";
+    } else if (track1Mute && track2Mute && !track3Mute && track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues Gtr 3 no Met.mp3";
+    } else if (track1Mute && track2Mute && track3Mute && !track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues Gtr Strum no Met.mp3";
+    } else if (track1Mute && track2Mute && track3Mute && track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Singles/Audio 23 Ensemble 4 Accidental Blues met with Met.mp3";
+    } else if (!track1Mute && !track2Mute && !track3Mute && track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 1+2+3 no Met.mp3";
+    } else if (!track1Mute && !track2Mute && track3Mute && !track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 1+2+4 no Met.mp3";
+    } else if (!track1Mute && !track2Mute && track3Mute && track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr1+2 with Met.mp3";
+    } else if (!track1Mute && track2Mute && !track3Mute && !track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 1+3+4 no Met.mp3";
+    } else if (!track1Mute && track2Mute && !track3Mute && track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr1+3 with Met.mp3";
+    } else if (!track1Mute && track2Mute && track3Mute && !track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gt1+4with Met.mp3";
+    } else if (track1Mute && !track2Mute && !track3Mute && !track4Mute && track5Mute) {
+        trackToPlay = "Tracks/No Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr 2+3+4 no Met.mp3";
+    } else if (track1Mute && !track2Mute && !track3Mute && track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr2+3 with Met.mp3";
+    } else if (track1Mute && !track2Mute && track3Mute && !track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr2+4with Met.mp3";
+    } else if (track1Mute && track2Mute && !track3Mute && !track4Mute && !track5Mute) {
+        trackToPlay = "Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues Gtr3+4with Met.mp3";
+    } else if (track1Mute && track2Mute && track3Mute && track4Mute && track5Mute) {
       toggleTrack(trackId, false);
       return;
     }

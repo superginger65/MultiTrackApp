@@ -35,47 +35,52 @@
 
   <div id="master-track">
     <audio id="master-audio">
-      <source id="master-source" src="Tracks/With Metronome/Combinations/Trio 1 Andante Mix with Met.mp3" type="audio/mp3">
+      <source id="master-source" src="Tracks/With Metronome/Combinations/Audio 23 Ensemble 4 Accidental Blues mix with Met.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
   </div>
 
   <div id="track-container">
     <div class="track">
-      <label for="track1">Guitar 1:</label>
+      <label for="track1">Guitar I:</label>
       <button id="mute-track1" onclick="toggleTrack(1, true)">🔊</button>
     </div>
 
     <div class="track">
-      <label for="track2">Guitar 2:</label>
+      <label for="track2">Guitar II:</label>
       <button id="mute-track2" onclick="toggleTrack(2, true)">🔊</button>
     </div>
 
     <div class="track">
-      <label for="track3">Guitar 3:</label>
+      <label for="track3">Guitar III:</label>
       <button id="mute-track3" onclick="toggleTrack(3, true)">🔊</button>
     </div>
 
     <div class="track">
-    <label for="track4">Metronome:</label>
-    <button id="mute-track4" onclick="toggleTrack(4, true)">🔊</button>
-  </div>
+      <label for="track4">Guitar IV:</label>
+      <button id="mute-track4" onclick="toggleTrack(4, true)">🔊</button>
+    </div>
+    
+    <div class="track">
+      <label for="track5">Metronome:</label>
+      <button id="mute-track5" onclick="toggleTrack(5, true)">🔊</button>
+    </div>
 
     <div class="track-slider">
       <label for="timeline">Timeline:</label>
       <div>
-        <input type="range" id="timeline" min="0" max="76" value="0" style="width: 50%;" oninput="moveTracksSlider(this.value)">
+        <input type="range" id="timeline" min="0" max="90" value="0" style="width: 50%;" oninput="moveTracksSlider(this.value)">
       </div>
     </div>
 
     <div id="loop-controls" hidden>
       <label for="loop-start">Loop Start:</label>
       <div>
-        <input type="range" id="loop-start" value="0" min="0" max="76" style="width: 50%;"/>
+        <input type="range" id="loop-start" value="0" min="0" max="90" style="width: 50%;"/>
       </div> 
       <label for="loop-end">Loop End:</label>
       <div>
-        <input type="range" id="loop-end" value="0" min="0" max="76" style="width: 50%;"/>
+        <input type="range" id="loop-end" value="0" min="0" max="90" style="width: 50%;"/>
       </div>
     </div>
   
