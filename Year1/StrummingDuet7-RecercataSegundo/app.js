@@ -2,7 +2,7 @@
 let masterTrack = document.getElementById('master-audio');
 const timeline = document.getElementById('timeline');
 
-let trackToPlay = `Tracks/With Metronome/Combinations/Audio 42 Strum 7 Recercata Segundo mix with met.mp3`;
+let trackToPlay = `Tracks/With Metronome/Combinations/Audio 42 Strum 7 Extended Recercata Segundo mix  with met.mp3`;
 let track1Mute = false;
 let track2Mute = false;
 let track3Mute = false;
@@ -81,20 +81,19 @@ let track4Mute = false;
         break;
     }
     if (!track1Mute && !track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Combinations/Audio 42 Strum 7 Recercata Segundo mix with met.mp3`; 
+      trackToPlay = `Tracks/With Metronome/Combinations/Audio 42 Strum 7 Extended Recercata Segundo mix  with met.mp3`; 
     } else if (!track1Mute && !track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Combinations/Audio 42 Strum 7 Recercata Segundo Mix no met.mp3`;
+      trackToPlay = `Tracks/No Metronome/Combinations/Audio 42 Strum 7 Extended Recercata Segundo mix no met.mp3`;
     } else if (track1Mute && !track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Singles/Audio 42 Strum 7 Recercata Segundo teacher with met.mp3`;
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 42 Strum 7 Extended Recercata Segundo teacher  with met.mp3`;
     } else if (!track1Mute && track3Mute && !track4Mute) {
-      trackToPlay = `Tracks/With Metronome/Singles/Audio 42 Strum 7 Recercata Segundo Student with met.mp3`;
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 42 Strum 7 Extended Recercata Segundo Strum  with met.mp3`;
     } else if (track1Mute && track3Mute && !track4Mute) {
-      // trackToPlay = `Tracks/With Metronome/Singles/Audio 40 Strum 6 Blue Jam Met with met.mp3`; Needs Uploaded
-      toggleTrack(trackId, false);
+      trackToPlay = `Tracks/With Metronome/Singles/Audio 42 Strum 7 Extended Recercata Segundo met with met.mp3`;
     } else if (track1Mute && !track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Singles/Audio 42 Strum 7 Recercata Segundo Teacher no met.mp3`;
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 42 Strum 7 Extended Recercata Segundo teacher no met.mp3`;
     } else if (!track1Mute && track3Mute && track4Mute) {
-      trackToPlay = `Tracks/No Metronome/Singles/Audio 42 Strum 7 Recercata Segundo Student no met.mp3`;
+      trackToPlay = `Tracks/No Metronome/Singles/Audio 42 Strum 7 Extended Recercata Segundo strum  no met.mp3`;
     } else if (track1Mute && track3Mute && track4Mute) {
       toggleTrack(trackId, false);
       return;
